@@ -18,4 +18,9 @@ public class Classifier {
         return min;
     }
 
+    public Object getMax(){
+        double max = 0.0;
+        return max;
+    }
+
 }
