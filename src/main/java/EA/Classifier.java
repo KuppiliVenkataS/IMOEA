@@ -6,12 +6,16 @@ import java.util.ArrayList;
  * Created by santhilata on 25/05/16.
  */
 public class Classifier {
-    String attributeName;
+    String classifierName;
     Object dataType;
     ArrayList data;
 
 
     int numClasses;
+
+    public Classifier(String classifierName){
+        this.classifierName = classifierName;
+    }
 
     public Object getMin(){
         double min =0.0;
