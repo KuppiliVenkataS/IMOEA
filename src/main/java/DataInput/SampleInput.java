@@ -7,6 +7,7 @@ import java.util.Random;
 
 /**
  * Created by santhilata on 25/05/16.
+ * Following class consists of two methods to create sample inputs for training and testing
  */
 public class SampleInput {
 
