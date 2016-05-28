@@ -59,6 +59,46 @@ public class RuleTree {
         return attributeList;
     }
 
+    /**
+     * The following method is to create list of classifiers
+     */
+    public ArrayList<Classifier> createClassifiersList(){
+        ArrayList<Classifier> classifiersList = new ArrayList<>();
+
+        Iterator<String> itr = attributeList.keySet().iterator();
+        while (itr.hasNext()){
+            String classifierName = itr.next();
+            ArrayList<String> classifierValue = (ArrayList<String>)attributeList.get(classifierName);
+
+
+            // create a new classifier with each attribute in the list
+            Classifier classifier = new Classifier(classifierName);
+            try {
+                String someString = classifierValue.get(0);
+                double d = Double.valueOf(someString);
+                if (someString.matches("\\-?\\d+")){//optional minus and at least one digit
+                    classifier.setDataType("Integer");
+                    System.out.println("integer" + d);
+                } else {
+                    classifier.setDataType("Double");
+                    System.out.println("double" + d);
+                }
+            } catch (Exception e) {
+                classifier.setDataType("String");
+                System.out.println("not number");
+            }
+
+            //finding ideal number of classes
+            for (int numClasses = 1; numClasses < 5; numClasses++) {
+                // to something here
+            }
+
+        }
+
+
+        return  classifiersList;
+    }
+
 
 
 }
